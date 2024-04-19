@@ -41,11 +41,20 @@ const Timer: React.FC<TimerProps> = ({
                     setSeconds((prev) => prev - 1);
                 }
             }, 1000);
+        } else {
+            if (isBreakMode && minutes === 0 && seconds === 0) {
+                setMinutes(initialMinutes);
+                setSeconds(initialSeconds);
+                setIsActive(true);
+            } else if (!isBreakMode && minutes === 0 && seconds === 0) {
+                setMinutes(initialMinutes);
+                setSeconds(initialSeconds);
+            }
         }
         return () => {
             if (intervalId) clearInterval(intervalId);
         };
-    }, [isActive, minutes, seconds, onTimerComplete]);
+    }, [isActive, minutes, seconds, onTimerComplete, isBreakMode, initialMinutes, initialSeconds]);
 
 
     // toggle the timer between active and paused states
@@ -60,13 +69,9 @@ const Timer: React.FC<TimerProps> = ({
         setSeconds(initialSeconds);
     };
 
-    useEffect(() => {
-        if (isBreakMode && minutes === 0 && seconds === 0) {
-            setMinutes(initialMinutes);
-            setSeconds(initialSeconds);
-            setIsActive(true);
-        }
-    }, [isBreakMode, minutes, seconds]);
+    // useEffect(() => {
+
+    // }, [isBreakMode, minutes, seconds]);
 
 
     // Render timer display and control buttons
