@@ -1,8 +1,12 @@
 module.exports = {
+    preset: 'ts-jest',
     testEnvironment: 'jsdom',
-    transform: {
-        '^.+\\.tsx?$': 'ts-jest',
+    globals: {
+        // This is necessary because next.js forces { "jsx": "preserve" }, but ts-jest appears to require { "jsx": "react" }
+        'ts-jest': {
+            tsconfig: {
+                jsx: 'react',
+            },
+        },
     },
-    testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
-    moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
 };
