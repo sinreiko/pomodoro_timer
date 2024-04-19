@@ -69,11 +69,6 @@ const Timer: React.FC<TimerProps> = ({
         setSeconds(initialSeconds);
     };
 
-    // useEffect(() => {
-
-    // }, [isBreakMode, minutes, seconds]);
-
-
     // Render timer display and control buttons
     return (
         <Flex flexDirection="column" alignItems="center">

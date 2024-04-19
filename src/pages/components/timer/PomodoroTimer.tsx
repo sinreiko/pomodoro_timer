@@ -3,8 +3,8 @@ import { Flex, Text } from '@chakra-ui/react';
 import Timer from './Timer';
 
 const PomodoroTimer: React.FC = () => {
-    const [workTime, setWorkTime] = useState(5); // by default: set 25 minute
-    const [breakTime, setBreakTime] = useState(2); // by default: set 5 minute
+    const [workTime, setWorkTime] = useState(5); //default: 25
+    const [breakTime, setBreakTime] = useState(2); //default: 5
     const [cycles, setCycles] = useState(0);
     const [isWorkTime, setIsWorkTime] = useState(true);
 
@@ -23,8 +23,8 @@ const PomodoroTimer: React.FC = () => {
                 {isWorkTime ? 'Work Timer' : 'Break Timer'}
             </Text>
             <Timer
-                initialMinutes={0} //by default, set to {isWorkTime ? workTime : breakTime}
-                initialSeconds={isWorkTime ? workTime : breakTime} // by default: set 0 seconds
+                initialMinutes={0} //by default: {isWorkTime ? workTime : breakTime}
+                initialSeconds={isWorkTime ? workTime : breakTime} //by default: 0
                 onTimerComplete={isWorkTime ? handleWorkTimerComplete : handleBreakTimerComplete}
                 isBreakMode={!isWorkTime}
             />
