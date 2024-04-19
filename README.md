@@ -21,6 +21,10 @@ npm test
 Test result:
 <img width="517" alt="Screenshot 2024-04-19 at 7 53 58 PM" src="https://github.com/sinreiko/pomodoro_timer/assets/29687485/f8868f60-2164-410b-98dc-28720067ab9d">
 
+Video result:
+https://github.com/sinreiko/pomodoro_timer/assets/29687485/cd530e70-bf57-4526-9fd6-2b7e4fbc4414
+
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 ## Learn More
